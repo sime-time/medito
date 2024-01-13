@@ -1,4 +1,4 @@
-# Medito Project Brief: Flexible Fundraising Single Web Page
+# Project Brief: Flexible Fundraising Single Web Page
 
 ## Objective:
 
