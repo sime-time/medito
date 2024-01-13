@@ -5,10 +5,8 @@
   const navItems = [
     {label: "Home", href: "#", class: "nav-link"},
     {label: "About", href: "#", class: "nav-link"},
-    {label: "Services", href: "#", class: "nav-link"},
-    {label: "Portfolio", href: "#", class: "nav-link"},
     {label: "Contact", href: "#", class: "nav-link"},
-    {label: "Start Now", href: "#", class: "nav-link nav-button"}
+    {label: "Donate", href: "#", class: "nav-link nav-button"}
   ];
 
   let isHamburgerActive = false; 
@@ -27,7 +25,7 @@
 </script>
 
 <nav class="nav-bar">
-  <!-- LOGO + NAME -->
+  <!-- LOGO -->
   <div class="nav-branding">
     <a href={home_url} class="logo-container">
       <img src={image_src} class="logo" alt="company logo" />
@@ -67,23 +65,27 @@
   .nav-link {
     color: var(--foreground);
     text-decoration: inherit;
-    padding: 1em;
-    transition: 0.5s ease;
+    margin: 1em;
+    padding-block: 0.5em;
+    transition: 0.2s ease;
   }
   .nav-link:hover {
-    color: var(--accent);
+    color: var(--primary);
   }
   .nav-link.nav-button {
-    background-color: var(--darkaccent);
+    color: var(--foreground);
+    background-color: var(--primary);
     border-radius: 10px;
-    border: 2px solid var(--accent);
-    box-shadow: -3px 3px var(--accent);
+    border: 2px solid var(--foreground);
+    box-shadow: 3px 3px var(--foreground);
+    padding: 1em;
   }
   .nav-link.nav-button:hover {
-    color: var(--darkaccent);
-    background-color: var(--foreground);
+    color: var(--primary);
+    background-color: var(--background);
     border-radius: 10px;
-    border: 2px solid var(--accent);
+    border: 2px solid var(--primary);
+    box-shadow: none;
   }
   
   .nav-branding {
@@ -95,15 +97,7 @@
     flex-direction: flex-start;
   }
   .logo {
-    height: 6em;
-  }
-  .name-container h1 {
-    text-align: left;
-    margin: 0;
-  }
-
-  .text-emphasis {
-    color: #EE964B
+    height: 8em;
   }
 
   .hamburger {

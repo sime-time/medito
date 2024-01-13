@@ -1,16 +1,18 @@
 :root {
-  font-family: monospace;
+  font-family: sans-serif;
   line-height: 1;
   font-size: 16px;
+
   --max-width: 1100px;
-  --max-mobile-ui-width: 300px;
+  --max-mobile-width: 768px;
+  --ui-mobile-width: 300px;
 
   color-scheme: light dark;
-  --primary-light: #7d84b2;
-  --primary-dark: #8e9dcc;
-  --secondary: #d9dbf1;
-  --foreground: #7b7f8e;
-  --background: #1c1d21;
+  --foreground: #0c0c0c;
+  --primary: #c48de2;
+  --secondary: #782aa2;
+  --tertiary: #d6d6d6;
+  --background: #ffffff;
   color: var(--foreground);
   background-color: var(--background);
 
@@ -23,7 +25,7 @@
 * {
   padding: 0;
   margin: 0;
-  /* bugfix with borders 
+  /* bugfix with borders
   border: 0.1px solid rgba(179, 210, 210, 0.5);*/
 }
 
