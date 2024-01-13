@@ -1,10 +1,12 @@
 <script>
   import meditoLogo from '/medito-logo.svg'
+  import NavBar from './lib/NavBar.svelte';
+  import Hero from './lib/Hero.svelte';
 </script>
 
 <main>
-  <h1>Medito</h1>
+  <NavBar image_src={meditoLogo} home_url={"https://www.meditofoundation.org"} />
 
-
+  <Hero />
 </main>
 

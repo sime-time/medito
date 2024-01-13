@@ -1,0 +1,162 @@
+<script>
+  export let image_src;
+  export let home_url;
+
+  const navItems = [
+    {label: "Home", href: "#", class: "nav-link"},
+    {label: "About", href: "#", class: "nav-link"},
+    {label: "Services", href: "#", class: "nav-link"},
+    {label: "Portfolio", href: "#", class: "nav-link"},
+    {label: "Contact", href: "#", class: "nav-link"},
+    {label: "Start Now", href: "#", class: "nav-link nav-button"}
+  ];
+
+  let isHamburgerActive = false; 
+  let isNavMenuActive = false; 
+
+  function toggleMenu() {
+    isHamburgerActive = !isHamburgerActive; 
+    isNavMenuActive = !isNavMenuActive; 
+  }
+
+  function closeMenu() {
+    isHamburgerActive = false; 
+    isNavMenuActive = false; 
+  }
+
+</script>
+
+<nav class="nav-bar">
+  <!-- LOGO + NAME -->
+  <div class="nav-branding">
+    <a href={home_url} class="logo-container">
+      <img src={image_src} class="logo" alt="company logo" />
+    </a>
+  </div>
+
+  <!-- NAV MENU ITEMS -->
+  <div class="nav-menu" class:active={isNavMenuActive}>
+    {#each navItems as item} 
+    <a href={item.href} class={item.class} on:click={closeMenu}>{item.label}</a>
+    {/each}
+  </div>
+
+  <!-- HAMBURGER -->
+  <button class="hamburger" class:active={isHamburgerActive} on:click={toggleMenu} aria-hidden="true">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </button>
+</nav>
+
+<style>
+  .nav-bar {
+    max-width: var(--max-width);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+    padding: 1em;
+  }
+  .nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+  }
+  .nav-link {
+    color: var(--foreground);
+    text-decoration: inherit;
+    padding: 1em;
+    transition: 0.5s ease;
+  }
+  .nav-link:hover {
+    color: var(--accent);
+  }
+  .nav-link.nav-button {
+    background-color: var(--darkaccent);
+    border-radius: 10px;
+    border: 2px solid var(--accent);
+    box-shadow: -3px 3px var(--accent);
+  }
+  .nav-link.nav-button:hover {
+    color: var(--darkaccent);
+    background-color: var(--foreground);
+    border-radius: 10px;
+    border: 2px solid var(--accent);
+  }
+  
+  .nav-branding {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+  }
+  .logo-container {
+    flex-direction: flex-start;
+  }
+  .logo {
+    height: 6em;
+  }
+  .name-container h1 {
+    text-align: left;
+    margin: 0;
+  }
+
+  .text-emphasis {
+    color: #EE964B
+  }
+
+  .hamburger {
+    display: none;
+    cursor: pointer;
+  }
+
+  .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background: var(--foreground)
+  }
+
+  @media(max-width: 768px) {
+    .hamburger {
+      display: block;
+      background: var(--background);
+      border: 0px solid;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .nav-menu {
+      position: fixed;
+      left: 100%;
+      top: 8rem;
+      gap: 0;
+      flex-direction: column;
+      background: var(--background);
+      width: 100%;
+      text-align: center;
+      justify-content: center;
+      transition: 0.4s;
+    }
+
+    .nav-item {
+      margin: 16px 0;
+    }
+
+    .nav-menu.active {
+      left: 0;
+    }
+  }
+</style>
