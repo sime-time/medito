@@ -1,6 +1,6 @@
 <script>
-  export let image_src;
-  export let home_url;
+  export let logo_src;
+  export let logo_url;
 
   const navItems = [
     {label: "Home", href: "#", class: "nav-link"},
@@ -27,8 +27,8 @@
 <nav class="nav-bar">
   <!-- LOGO -->
   <div class="nav-branding">
-    <a href={home_url} class="logo-container">
-      <img src={image_src} class="logo" alt="company logo" />
+    <a href={logo_url} class="logo-container">
+      <img src={logo_src} class="logo" alt="company logo" />
     </a>
   </div>
 

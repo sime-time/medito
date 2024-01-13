@@ -4,8 +4,6 @@
   font-size: 16px;
 
   --max-width: 1100px;
-  --max-mobile-width: 768px;
-  --ui-mobile-width: 300px;
 
   color-scheme: light dark;
   --foreground: #0c0c0c;
@@ -44,4 +42,10 @@ body::-webkit-scrollbar-track {
 
 body::-webkit-scrollbar-thumb {
   background: var(--accent);
+}
+
+@media (max-width: 768px) {
+  :root {
+    --max-width: 300px;
+  }
 }
