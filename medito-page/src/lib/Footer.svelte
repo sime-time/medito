@@ -1,9 +1,7 @@
 <footer>
-
   <div>
     <p>Copyright &copy; 2023 Medito Foundation. All rights reserved.</p>
   </div>
-  
 </footer>
 
 <style>

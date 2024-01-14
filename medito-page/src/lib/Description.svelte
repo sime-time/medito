@@ -20,7 +20,7 @@
   .img-container img {
     width: 100%;
     height: auto;
-    border-radius: 12px;
+    border-radius: var(--border-radius);
   }
 
   @media (max-width: 768px) {

@@ -75,7 +75,7 @@
   .nav-link.nav-button {
     color: var(--foreground);
     background-color: var(--primary);
-    border-radius: 10px;
+    border-radius: var(--border-radius);
     border: 2px solid var(--foreground);
     box-shadow: 3px 3px var(--foreground);
     padding: 1em;
@@ -83,7 +83,7 @@
   .nav-link.nav-button:hover {
     color: var(--primary);
     background-color: var(--background);
-    border-radius: 10px;
+    border-radius: var(--border-radius);
     border: 2px solid var(--primary);
     box-shadow: none;
   }
@@ -97,7 +97,7 @@
     flex-direction: flex-start;
   }
   .logo {
-    height: 8em;
+    height: 6em;
   }
 
   .hamburger {
@@ -141,8 +141,9 @@
       background: var(--background);
       width: 100%;
       text-align: center;
-      justify-content: center;
+      justify-content: flex-start;
       transition: 0.4s;
+      height: 100vh;
     }
 
     .nav-item {
