@@ -69,10 +69,7 @@
     display: flex;
     flex-direction: row;
   }
-  .small-title {
-    color: var(--foreground);
-  }
-  .subtext {
+   .subtext {
     color: var(--tertiary);
     font-size: 16px;
   }
@@ -86,49 +83,8 @@
   #progress-bar {
     width: 0%;
     height: 8px; /* height of the progress bar */
-    background-color: #A0AF84; /* Color of the progress bar */
+    background-color: limegreen; /* Color of the progress bar */
     transition: width 0.3s ease-in-out; /* Add a smooth transition effect */
   }
-
-  .button-container {
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-  }
-  .donate-button {
-    color: var(--foreground);
-    background-color: var(--primary);
-    border-radius: var(--border-radius);
-    border: 2px solid var(--foreground);
-    box-shadow: 3px 3px var(--foreground);
-    padding: 1em;
-    text-align: center;
-    transition: 0.2s ease;
-  }
-  .donate-button:hover {
-    color: var(--primary);
-    background-color: var(--background);
-    border-radius: var(--border-radius);
-    border: 2px solid var(--primary);
-    box-shadow: none;
-  }
-  .share-button {
-    color: var(--background);
-    background-color: var(--secondary);
-    border-radius: var(--border-radius);
-    border: 2px solid var(--foreground);
-    box-shadow: 3px 3px var(--foreground);
-    padding: 1em;
-    text-align: center;
-    transition: 0.2s ease;
-  }
-  .share-button:hover {
-    color: var(--secondary);
-    background-color: var(--background);
-    border-radius: var(--border-radius);
-    border: 2px solid var(--secondary);
-    box-shadow: none;
-  }
-
 
 </style> 

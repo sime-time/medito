@@ -6,7 +6,7 @@
     {label: "Home", href: "#", class: "nav-link"},
     {label: "About", href: "#", class: "nav-link"},
     {label: "Contact", href: "#", class: "nav-link"},
-    {label: "Donate", href: "#", class: "nav-link nav-button"}
+    {label: "Donate", href: "#", class: "nav-link donate-button"}
   ];
 
   let isHamburgerActive = false; 
@@ -66,7 +66,7 @@
     color: var(--foreground);
     text-decoration: inherit;
     margin: 1em;
-    padding-block: 0.5em;
+    padding-block: 1em;
     transition: 0.2s ease;
   }
   .nav-link:hover {

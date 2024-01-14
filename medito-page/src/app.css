@@ -26,8 +26,8 @@
 * {
   padding: 0;
   margin: 0;
-  /* bugfix with borders 
-  border: 0.5px dashed red; */
+  /* bugfix with borders */
+  border: 0.5px dashed red;
 }
 
 #app {
@@ -46,6 +46,48 @@ body::-webkit-scrollbar-track {
 body::-webkit-scrollbar-thumb {
   background: var(--accent);
 }
+.small-title {
+  color: var(--foreground);
+}
+.button-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
 
+.donate-button {
+  color: var(--foreground);
+  background-color: var(--primary);
+  border-radius: var(--border-radius);
+  border: 2px solid var(--foreground);
+  box-shadow: 3px 3px var(--foreground);
+  padding: 1em;
+  text-align: center;
+  transition: 0.2s ease;
+}
+.donate-button:hover {
+  color: var(--primary);
+  background-color: var(--background);
+  border-radius: var(--border-radius);
+  border: 2px solid var(--primary);
+  box-shadow: none;
+}
+.share-button {
+  color: var(--background);
+  background-color: var(--secondary);
+  border-radius: var(--border-radius);
+  border: 2px solid var(--foreground);
+  box-shadow: 3px 3px var(--foreground);
+  padding: 1em;
+  text-align: center;
+  transition: 0.2s ease;
+}
+.share-button:hover {
+  color: var(--secondary);
+  background-color: var(--background);
+  border-radius: var(--border-radius);
+  border: 2px solid var(--secondary);
+  box-shadow: none;
+}
 @media (max-width: 768px) {
 }
