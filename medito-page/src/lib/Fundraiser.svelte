@@ -68,7 +68,7 @@ special needs.`
   }
 
   .title {
-    padding-block: 0.5em;
+    padding-bottom: 0.5em;
   }
 
   .img-container img {

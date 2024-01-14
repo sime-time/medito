@@ -40,6 +40,7 @@
       <div id="progress-bar"></div>
     </div>
     <div class="donations">
+      <h3 class="progress-percent">{progress_percentage.toString()}% Complete</h3>
       <h3 class="subtext">{donations} donations</h3>
     </div>
     <div class="button-container">
@@ -69,7 +70,16 @@
     display: flex;
     flex-direction: row;
   }
-   .subtext {
+  .donations {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .progress-percent {
+    color: limegreen;
+    font-size: 16px;
+  }
+  .subtext {
     color: var(--tertiary);
     font-size: 16px;
   }
