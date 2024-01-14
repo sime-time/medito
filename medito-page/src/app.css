@@ -25,8 +25,8 @@
 * {
   padding: 0;
   margin: 0;
-  /* bugfix with borders
-  border: 0.1px solid rgba(179, 210, 210, 0.5);*/
+  /* bugfix with borders */
+  border: 0.5px dashed red;
 }
 
 #app {
