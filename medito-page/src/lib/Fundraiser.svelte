@@ -1,7 +1,7 @@
 <script>
   import Description from './Description.svelte'
   import GoalProgress from './GoalProgress.svelte'
-  let fundraiser_title = "Create Ad Campaign in the Tram"
+  let fundraiser_title = "Community Service Campaign"
 </script>
 
 
@@ -27,7 +27,6 @@
   }
 
   .fundraiser-info {
-    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -40,9 +39,12 @@
 
   #desc-container {
     width: 100%;
+    flex: 2;
   }
   #goal-container {
     width: 100%;
+    flex: 1;
+
   }
 
 </style>

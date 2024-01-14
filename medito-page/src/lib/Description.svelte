@@ -16,7 +16,9 @@
   .description {
     display: flex;
     flex-direction: column;
+    width: 100%;
   }
+    
   .img-container img {
     width: 100%;
     height: auto;

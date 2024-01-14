@@ -10,9 +10,10 @@
   color-scheme: light dark;
   --foreground: #0c0c0c;
   --primary: #c48de2;
-  --secondary: #782aa2;
-  --tertiary: #d6d6d6;
+  --secondary: #7768df;
+  --tertiary: #c2c2c2;
   --background: #ffffff;
+  --background-accent: #f5f5f5;
   color: var(--foreground);
   background-color: var(--background);
 
@@ -25,8 +26,8 @@
 * {
   padding: 0;
   margin: 0;
-  /* bugfix with borders */
-  border: 0.5px dashed red;
+  /* bugfix with borders 
+  border: 0.5px dashed red; */
 }
 
 #app {
