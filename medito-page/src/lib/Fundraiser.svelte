@@ -1,8 +1,10 @@
+<!-- JAVASCRIPT -->
 <script>
-  import GoalProgress from './GoalProgress.svelte'
-  import fundraiserImg from '../assets/fundraiser-photo.jpg'
-  let fundraiser_title = "Community Service Campaign"
-  let fundraiser_description = `For the past 20 years I have been a licensed
+import GoalProgress from './GoalProgress.svelte';
+import FAQ from './FAQ.svelte';
+import fundraiserImg from '../assets/fundraiser-photo.jpg';
+let fundraiser_title = "Community Service Campaign";
+let fundraiser_description = `For the past 20 years I have been a licensed
 barber/cosmetologist in my hometown of
 Cincinnati, Ohio. As of 2019 I took a step
 toward entrepreneurship in the personal care
@@ -31,75 +33,100 @@ Due to the additional time required and
 accommodations needed, this mother could
 not find a barber in her hometown who was
 willing to provide a haircut for her son who has
-special needs.`
+special needs.`;
 </script>
 
+<!-- HTML -->
 
 <div class="container">
   <h1 class="title">{fundraiser_title}</h1>
-  <div class="fundraiser-info">
+</div>
+<div class="container">
+   <div id="left-content">
     <div class="img-container">
       <img src={fundraiserImg} alt="fundraising topic" />
     </div>
+    <div id="goal-container-mobile">
+      <GoalProgress />
+    </div>
+    <div id="description">
+      <h3 class="small-title">Purpose:</h3>
+      <p>{fundraiser_description}</p>
+    </div>
+    <FAQ />
+  </div>
+  <div id="right-content">
     <div id="goal-container">
       <GoalProgress />
     </div>
   </div>
-  <div id="description">
-    <h3 class="small-title">Purpose:</h3>
-    <p>{fundraiser_description}</p>
-  </div>
 </div>
 
+
+
+<!-- CSS -->
 <style>
-  .container {
-    max-width: var(--max-width);
-    margin: auto;
-    padding: 1em;
-    display: flex;
-    flex-direction: column;
-  }
+.title {
+  padding-bottom: 0.5em;
+}
+.container {
+  max-width: var(--max-width);
+  margin: auto;
+  padding-inline: 1em;
+  display: flex;
+  flex-direction: row; 
+  justify-content: space-between;
+  gap: 1em;
+} 
+#left-content {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  justify-content: space-between;
+}
+#right-content {
+  flex: 1;
+}
+#goal-container {
+  position: fixed;
+}
 
-  .fundraiser-info {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 1em;
-  }
+.info-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
 
-  .title {
-    padding-bottom: 0.5em;
-  }
 
-  .img-container img {
-    width: 100%;
-    height: auto;
-    border-radius: var(--border-radius);
-  }
+.img-container img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--border-radius);
+}
+#goal-container-mobile {
+  display: none;
+}
 
-  .img-container {
-    width: 100%;
-    flex: 2;
-  }
-  #goal-container {
-    width: 100%;
-    flex: 1;
-  }
+#description {
+  width: 40vw;
+  margin-block: 1em;
+  line-height: 1.5;
+}
+
+@media(max-width: 768px) {
   #description {
-    width: 30vw;
+    width: 100%;
+  }
+  #right-content {
+    display: none;
+  }
+  #goal-container-mobile {
+    display: flex;
+    width: inherit;
     margin-block: 1em;
-    line-height: 1.5;
   }
-
-  @media(max-width: 768px) {
-    .fundraiser-info {
-      flex-direction: column;
-      gap: 1em;
-    }
-    #description {
-      width: 100%;
-    }
-  }
+}
 
 </style>
 

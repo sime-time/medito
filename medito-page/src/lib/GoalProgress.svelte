@@ -17,8 +17,10 @@
   let donations = donations_api;
 
   function updateProgressBar(percent) {
-    const progressBar = document.getElementById('progress-bar');
-    progressBar.style.width = percent + '%';
+    const progressBarElements = document.querySelectorAll('.progress-bar'); // returns collection
+    progressBarElements.forEach(function(progressBar) {
+      progressBar.style.width = percent + '%';
+    });
   }
 
   document.addEventListener("DOMContentLoaded", () => {
@@ -37,7 +39,7 @@
       </h2>
     </div>
     <div class="progress-bar-container">
-      <div id="progress-bar"></div>
+      <div class="progress-bar"></div>
     </div>
     <div class="donations">
       <h3 class="progress-percent">{progress_percentage.toString()}% Complete</h3>
@@ -53,6 +55,7 @@
 
 <style>
   .goal-progress-container {
+    width: 100%;
     padding: 1em;
     background: var(--background-accent);
     border-radius: var(--border-radius);
@@ -90,7 +93,7 @@
     overflow: hidden; /* Hide overflowing content */
   }
 
-  #progress-bar {
+  .progress-bar {
     width: 0%;
     height: 8px; /* height of the progress bar */
     background-color: limegreen; /* Color of the progress bar */

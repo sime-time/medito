@@ -28,19 +28,22 @@ const faqItems = [
 <!-- CSS -->
 <style>
 .faq-container {
-  max-width: var(--max-width);
   margin: auto;
-  padding: 1em;
   display: flex;
   flex-direction: column;
+  gap: 1em;
 }
 .faq-item {
-
+  
 }
 .question {
   font-weight: 600;
+  padding: 1em;
+  border: 2px solid var(--foreground);
 }
 .answer {
   font-weight: 200;
+  padding: 1em;
+
 }
 </style>
