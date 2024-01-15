@@ -60,6 +60,7 @@
     background: var(--background-accent);
     border-radius: var(--border-radius);
     box-shadow: 3px 3px var(--foreground);
+    box-sizing: border-box;
   }
   
   .goal-content {

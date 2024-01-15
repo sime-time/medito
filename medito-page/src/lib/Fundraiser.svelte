@@ -34,7 +34,10 @@ accommodations needed, this mother could
 not find a barber in her hometown who was
 willing to provide a haircut for her son who has
 special needs.`;
+
+
 </script>
+  
 
 <!-- HTML -->
 
@@ -88,16 +91,11 @@ special needs.`;
 #right-content {
   flex: 1;
 }
+
 #goal-container {
-  position: fixed;
+  position: sticky;
+  top: 1em;
 }
-
-.info-container {
-  display: flex;
-  flex-direction: column;
-  gap: 1em;
-}
-
 
 .img-container img {
   width: 100%;
@@ -109,7 +107,6 @@ special needs.`;
 }
 
 #description {
-  width: 40vw;
   margin-block: 1em;
   line-height: 1.5;
 }
@@ -123,7 +120,6 @@ special needs.`;
   }
   #goal-container-mobile {
     display: flex;
-    width: inherit;
     margin-block: 1em;
   }
 }
