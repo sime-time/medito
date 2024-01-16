@@ -8,19 +8,19 @@ Develop a versatile single web page that can be adapted for various fundraising 
 
 ### Title and Description:
 
-- A clear and adjustable title that can be set to reflect the current fundraising goal (e.g., "Create Ad Campaign in the Tram").
-- A brief description that contextualizes the fundraising initiative.
+- ~~A clear and adjustable title that can be set to reflect the current fundraising goal (e.g., "Create Ad Campaign in the Tram").~~
+- ~~A brief description that contextualizes the fundraising initiative.~~
 
 ### Fundraising Progress Indicator:
 
-- Display dynamically the amount raised towards the goal (dummy data, but can be replaced by an API endpoint).
-- Visually represent progress in both numerical value and percentage.
-- Implement an animated progress bar that activates upon page load.
+- ~~Display dynamically the amount raised towards the goal (dummy data, but can be replaced by an API endpoint).~~
+- ~~Visually represent progress in both numerical value and percentage.~~
+- ~~Implement an animated progress bar that activates upon page load.~~
 
 ### Interactive Q&A Dropdowns:
 
-- Include customizable questions relevant to the fundraising goal.
-- Dropdowns to reveal answers for each question.
+- ~~Include customizable questions relevant to the fundraising goal.~~
+- ~~Dropdowns to reveal answers for each question.~~
 - The final dropdown to contain an inline form asking for the user's email address to prevent spam and allow for follow-up queries.
 
 ### Donation Section:

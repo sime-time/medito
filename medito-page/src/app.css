@@ -47,7 +47,7 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar-thumb {
-  background: var(--accent);
+  background: var(--tertiary);
 }
 .small-title {
   color: var(--foreground);
