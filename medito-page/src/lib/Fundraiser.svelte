@@ -34,13 +34,11 @@ accommodations needed, this mother could
 not find a barber in her hometown who was
 willing to provide a haircut for her son who has
 special needs.`;
-
-
 </script>
   
 
-<!-- HTML -->
 
+<!-- HTML -->
 <div class="container">
   <h1 class="title">{fundraiser_title}</h1>
 </div>

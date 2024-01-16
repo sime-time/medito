@@ -60,6 +60,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .donate-button {
+  cursor: pointer;
   color: var(--foreground);
   background-color: var(--primary);
   border-radius: var(--border-radius);
@@ -77,6 +78,7 @@ body::-webkit-scrollbar-thumb {
   box-shadow: none;
 }
 .share-button {
+  cursor: pointer;
   color: var(--background);
   background-color: var(--secondary);
   border-radius: var(--border-radius);
