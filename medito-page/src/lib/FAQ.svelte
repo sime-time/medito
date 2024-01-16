@@ -1,42 +1,20 @@
 <!-- JAVASCRIPT -->
 <script>
-const faqItems = [
-  {question: "How are ebooks delivered?", answer: "I've partnered with Sendowl for ebook delivery; after the campaign closes, you'll get a survey asking you for an email address to send your download code to. Note: If you use Apple's Private Relay service for email, you must provide an alternative email address for delivery when you fill in your survey. By design, these email addresses only work with one service. The address you provide to Kickstarter won't work with Sendowl or Libro.fm!"},
-  {question: "How are audiobooks delivered?", answer: "I've partnered with the great Libro.fm to make it easier for people who don't want to wrangle sideloading their own media. If you choose Libro.fm for audiobook delivery, you'll get a download code by email. Just install the Libro app (for iOS or Android), enter the code, and the book will show up in your account (Libro also lets you download all the books in your library as MP3s)."},
-  {question: "Where do signed books ship from?", answer: "Signed books get fulfilled by LA's Book Soup/Vroman's, a superb, independent bookseller. I drop by to sign books there once per week, and they ship all over the world for me. Non-US buyers may have the pay customs charges when these books arrive."},
-  {question: "Will I get the US or UK covers on my print books?", answer: "Backers in Canada and the USA will get the US cover. from Tor Books. All other backers will get the UK cover, from Head of Zeus."},
-  {question: "Have another question?", answer: "FORM HERE"}
+import { slide } from 'svelte/transition';
+import { quintOut } from 'svelte/easing';
+
+let faqItems = [
+  {isOpen: false, question: "How are ebooks delivered?", answer: "I've partnered with Sendowl for ebook delivery; after the campaign closes, you'll get a survey asking you for an email address to send your download code to. Note: If you use Apple's Private Relay service for email, you must provide an alternative email address for delivery when you fill in your survey. By design, these email addresses only work with one service. The address you provide to Kickstarter won't work with Sendowl or Libro.fm!"},
+  {isOpen: false, question: "How are audiobooks delivered?", answer: "I've partnered with the great Libro.fm to make it easier for people who don't want to wrangle sideloading their own media. If you choose Libro.fm for audiobook delivery, you'll get a download code by email. Just install the Libro app (for iOS or Android), enter the code, and the book will show up in your account (Libro also lets you download all the books in your library as MP3s)."},
+  {isOpen: false, question: "Where do signed books ship from?", answer: "Signed books get fulfilled by LA's Book Soup/Vroman's, a superb, independent bookseller. I drop by to sign books there once per week, and they ship all over the world for me. Non-US buyers may have the pay customs charges when these books arrive."},
+  {isOpen: false, question: "Will I get the US or UK covers on my print books?", answer: "Backers in Canada and the USA will get the US cover. from Tor Books. All other backers will get the UK cover, from Head of Zeus."},
+  {isOpen: false, question: "Have another question?", answer: "FORM HERE"}
 ]; 
 
-document.addEventListener("DOMContentLoaded", () => {
-  
-  // for loop through all questions 
-  let questions = document.getElementsByClassName("question");
-  for (let i = 0; i < questions.length; i++) {
-
-    
-    // when each question is clicked:
-    questions[i].addEventListener("click", function() {
-
-      // toggle transformation of the dropdown arrow 
-      let dropdownIcon = this.lastElementChild; 
-      if (dropdownIcon.classList.contains("active")) {
-        dropdownIcon.classList.remove("active");
-      } else {
-        dropdownIcon.classList.add("active");
-      }
-      
-      // toggle visibility of answers       
-      let answer = this.nextElementSibling;
-      if (answer.style.display === "block") {
-        answer.style.display = "none";
-      } else {
-        answer.style.display = "block";
-      }
-    });
-
-  }
-});
+// open answer block when question is clicked 
+function toggleAnswer(index) {
+  faqItems[index].isOpen = !faqItems[index].isOpen;
+}
 
 </script>
 
@@ -45,13 +23,23 @@ document.addEventListener("DOMContentLoaded", () => {
 <!-- HTML -->
 <div class="faq-container">
   <h3 class="small-title">Frequently Asked Questions:</h3>
-  {#each faqItems as item}
+  {#each faqItems as item, i}
     <div class="faq-item">
-      <button class="question">
+      <button class="question" on:click={() => toggleAnswer(i)}>
         {item.question}
-        <i class="fa-solid fa-chevron-down"></i>
+
+        {#if item.isOpen}
+          <i class="fa-solid fa-chevron-up"></i>
+        {:else}
+          <i class="fa-solid fa-chevron-down"></i>
+        {/if}
+
       </button>
-      <div class="answer">{item.answer}</div>
+
+      {#if item.isOpen}
+        <div class="answer" transition:slide={{ delay: 0, duration: 500, easing: quintOut, axis: 'y' }} >{item.answer}</div>
+      {/if}
+
     </div>
   {/each}
 </div>
@@ -67,6 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
   gap: 1em;
   width: 100%;
 }
+
 .faq-item {
   border-radius: var(--border-radius);
   border: 2px solid var(--foreground);
@@ -77,6 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
 .faq-item:hover {
   background: var(--tertiary);
 }
+
 .question {
   font-weight: bold;
   font-size: 1rem;
@@ -91,8 +81,6 @@ document.addEventListener("DOMContentLoaded", () => {
   display: flex;
   justify-content: space-between;
 }
-
-/* transition for the arrow icon */ 
 .question > i {
   font-size: 1.2rem;
 }
@@ -103,7 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
   padding-inline: 1em;
   padding-bottom: 1em;
   overflow: hidden;
-  display: none;
+  display: block;
 }
 
 </style>
