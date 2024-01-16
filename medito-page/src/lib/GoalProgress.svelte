@@ -59,6 +59,7 @@
     padding: 1em;
     background: var(--background-accent);
     border-radius: var(--border-radius);
+    border: 2px solid var(--foreground);
     box-shadow: 3px 3px var(--foreground);
     box-sizing: border-box;
   }

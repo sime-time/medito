@@ -11,5 +11,6 @@
     align-items: center;
     justify-content: center;
     margin: auto;
+    padding: 4em;
   }
 </style>
