@@ -107,6 +107,7 @@ special needs.`;
 }
 
 #description {
+  font-size: 1rem;
   margin-block: 1em;
   line-height: 1.5;
 }

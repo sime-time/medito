@@ -1,3 +1,6 @@
+/* google font - source serif and dm sans */
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Source+Serif+4:opsz@8..60&display=swap");
+
 :root {
   font-family: sans-serif;
   line-height: 1;
@@ -26,8 +29,8 @@
 * {
   padding: 0;
   margin: 0;
-  /* bugfix with borders 
-  border: 0.5px dashed red; */
+  /* bugfix with borders */
+  border: 0.5px dashed red;
 }
 
 #app {
@@ -48,6 +51,7 @@ body::-webkit-scrollbar-thumb {
 }
 .small-title {
   color: var(--foreground);
+  font-size: 1.5rem;
 }
 .button-container {
   display: flex;
