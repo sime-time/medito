@@ -4,18 +4,72 @@
 let rewards = [
   {name: "Diamond", minimum: 100, icon: "fa-solid fa-gem", isSelected: false},
   {name: "Gold", minimum: 50, icon: "fa-solid fa-sack-dollar", isSelected: false},
-  {name: "Iron", minimum: 1, icon: "fa-solid fa-coins", isSelected: true}
+  {name: "Iron", minimum: 1, icon: "fa-solid fa-coins", isSelected: false}
 ]; 
+
+let currencies = [
+  {name: "USD", icon: "&#36;"},
+  {name: "EUR", icon: "&#8364;"},
+  {name: "CAD", icon: "&#36;"},
+  {name: "GBP", icon: "&#163;"},
+  {name: "AUD", icon: "&#36;"}
+];
+
+// dynamic bind values for donation amount 
+let amount;
+let minAmount;
+
 
 function selectReward(index) {
   // selecting a reward should unselect every other reward 
-  rewards[index].isSelected = true; 
+  rewards[index].isSelected = true;
+  amount = rewards[index].minimum;
+  minAmount = rewards[index].minimum;
 
   for (let i = 0; i < rewards.length; i++) {
     if (!(i===index)) {
       rewards[i].isSelected = false; 
     }
   }
+}
+
+let selectedCurrency = currencies[0].name;
+let selectedCurrencyIcon = currencies[0].icon;
+
+function handleCurrencyChange(event) {
+  selectedCurrency = event.target.value;
+  selectedCurrencyIcon = getCurrencyIcon();
+}
+function getCurrencyIcon() {
+  if (selectedCurrency) {
+    // find the currency with the matching name
+    const selectedCurrencyObj = currencies.find(currency => currency.name === selectedCurrency);
+
+    // if a matching currency is found, return its icon; otherwise, return the icon of the first currency
+    return selectedCurrencyObj ? selectedCurrencyObj.icon : currencies[0].icon;
+  } else {
+    // if selectedCurrency is falsy, return the icon of the first currency
+    return currencies[0].icon;
+  }
+}
+
+// event handler for input changes 
+function handleAmountInput(event) {
+  let inputValue = event.target.value;
+
+  // remove non-digit characters except decimal point
+  inputValue = inputValue.replace(/[^\d.]/g, '');
+
+  // ensure only one decimal point is present
+  const decimalCount = inputValue.split('.').length - 1;
+  if (decimalCount > 1) {
+    inputValue = inputValue.slice(0, inputValue.lastIndexOf('.'));
+  }
+
+  // update the amount with the cleaned and formatted value
+  amount = inputValue; 
+
+  // make the selected reward change based on the amount 
 }
 
 </script>
@@ -31,7 +85,7 @@ function selectReward(index) {
         <i class={reward.icon}></i>
         <div class="reward-desc">
           <span>{reward.name}</span>
-          <p>The minimum for this tier is ${reward.minimum.toString()}</p>
+          <p>The minimum for this tier is {@html selectedCurrencyIcon}{reward.minimum.toString()}</p>
         </div>
       </button>
     {/each}
@@ -39,7 +93,20 @@ function selectReward(index) {
 
   <h4>Donation amount</h4>
   <div class="donation-container">
+    <div class="currency-container">
 
+      <!-- when the dropdown selection changes, choose the correct currency symbol -->
+      <label for="currency-dropdown" class="currency-label">{@html selectedCurrencyIcon}</label>
+
+      <select class="currency-dropdown" name="currency" on:change={handleCurrencyChange}>
+        {#each currencies as currency}
+          <option value={currency.name}>{currency.name}</option>
+        {/each}
+      </select>
+    </div>
+    <div class="input-container">
+      <input type="text" class="input-amount" bind:value={amount} on:input={handleAmountInput} placeholder=0 />
+    </div>
   </div>
 
 
@@ -100,5 +167,49 @@ h4 {
 .reward-desc > p {
   font-size: 0.8rem;
 }
+
+
+.donation-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 1em;
+  border: 2px solid var(--foreground);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  height: 5em;
+}
+
+.currency-container {
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  gap: 0.5em;
+  background-color: var(--background);
+  height: inherit;
+  justify-content: center;
+}
+.currency-label {
+  text-align: center;
+  font-size: 1.5em;
+}
+.currency-dropdown {
+  color: var(--foreground);
+  background: inherit;
+}
+
+.input-container {
+  height: inherit;
+  border-left: 2px solid var(--foreground);
+}
+.input-amount {
+  width: 100%;
+  height: 100%;
+  color: var(--foreground);
+  background: var(--background);
+  font-size: 2em;
+  padding-left: 10px;
+}
+
 
 </style>

@@ -136,6 +136,7 @@ special needs.`;
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 .expand-button {
