@@ -135,11 +135,13 @@ special needs.`;
 .expand-container {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .expand-button {
   appearance: none; /* removes the checkbox */
   color: var(--primary);
+  padding: 0.5em;
 }
 
 .expand-button:hover {
