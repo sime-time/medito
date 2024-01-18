@@ -137,7 +137,6 @@ special needs.`;
   justify-content: center;
   align-items: center;
   width: 100%;
-  border: 2px solid purple;
 }
 
 .expand-button {
@@ -145,7 +144,8 @@ special needs.`;
   color: var(--primary);
   padding: 0.5em;
   max-width: 100%;
-  border: 2px solid orange;
+  width: 50%;
+  text-align: center;
 }
 
 .expand-button:hover {
