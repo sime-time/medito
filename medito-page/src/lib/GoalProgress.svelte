@@ -4,11 +4,13 @@ import { slide, fade } from 'svelte/transition';
 import { quintOut } from 'svelte/easing';
 import Donate from './Donate.svelte';
 
+// connect to stripe API 
+let stripeURL = "https://buy.stripe.com/9AQ5lY0eP7tE4x24gg";
+
 // take donation data from API 
 const money_raised_api = 34000;
 const money_goal_api = 55000;
 const donations_api = 1420;
-const progress_percentage = Math.floor(money_raised_api/money_goal_api*100);
  
 // format API data to $USD
 let currency = Intl.NumberFormat('en-US', {
@@ -20,11 +22,13 @@ let currency = Intl.NumberFormat('en-US', {
 let money_raised = currency.format(money_raised_api);
 let money_goal = currency.format(money_goal_api);
 let donations = donations_api;
+const progress_percentage = Math.floor(money_raised_api/money_goal_api*100);
 
-function updateProgressBar(percent) {
+
+function updateProgressBar() {
   const progressBarElements = document.querySelectorAll('.progress-bar'); // returns collection
   progressBarElements.forEach(function(progressBar) {
-    progressBar.style.width = percent + '%';
+    progressBar.style.width = `${progress_percentage}%`;
   });
 }
 
@@ -35,8 +39,9 @@ function openDonate() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  updateProgressBar(progress_percentage);
+  updateProgressBar();
 });
+
 
 </script>
 
@@ -66,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
       {#if donationOpen}
         <div class="donation-panel" transition:slide={{ delay: 0, duration: 700, easing: quintOut, axis: 'y' }} >
           <Donate />
-          <a class="donate-button" href="#">Continue</a> <!-- link to payment page --> 
+          <a class="donate-button" href={stripeURL}>Continue</a> <!-- link to payment page --> 
         </div>
       {:else}
         <button class="donate-button" on:click={openDonate} transition:fade={{ delay: 0, duration: 20}}>Donate</button>
@@ -125,7 +130,14 @@ document.addEventListener("DOMContentLoaded", () => {
   width: 0%;
   height: 8px; /* height of the progress bar */
   background-color: limegreen; /* Color of the progress bar */
-  transition: width 0.3s ease-in-out; /* Add a smooth transition effect */
+  transition: width 1.5s ease; /* Add a smooth transition effect */
+  animation-name: animationProgress;
+  animation-duration: 1.5s;
+}
+@keyframes animationProgress {
+  from {
+    width: 0; 
+  }
 }
 
 .donation-panel {
@@ -135,4 +147,5 @@ document.addEventListener("DOMContentLoaded", () => {
   justify-content: space-between;
   gap: 1em;
 }
+
 </style> 

@@ -23,15 +23,15 @@ Develop a versatile single web page that can be adapted for various fundraising 
 - ~~Dropdowns to reveal answers for each question.~~
 - ~~The final dropdown to contain an inline form asking for the user's email address to prevent spam and allow for follow-up queries.~~
 
-### Donation Section:
+### ~~Donation Section:~~
 
-- An input field for donors to specify an amount, with validation to ensure it's a legitimate figure.
-- Integration with Stripe checkout for secure transactions, with support for multiple currencies.
-- A donation button that is prominently displayed and accessible.
+- ~~An input field for donors to specify an amount, with validation to ensure it's a legitimate figure.~~
+- ~~Integration with Stripe checkout for secure transactions, with support for multiple currencies.~~
+- ~~A donation button that is prominently displayed and accessible.~~
 
-### Rewards for Donors:
+### ~~Rewards for Donors:~~
 
-- A flexible rewards section where incentives can be outlined based on donation tiers. (can be mixed with the donation section)
+- ~~A flexible rewards section where incentives can be outlined based on donation tiers. (can be mixed with the donation section)~~
 
 ### Dynamic Notification Bar:
 

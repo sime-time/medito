@@ -19,7 +19,6 @@ let currencies = [
 let amount;
 let minAmount;
 
-
 function selectReward(index) {
   // selecting a reward should unselect every other reward 
   rewards[index].isSelected = true;
