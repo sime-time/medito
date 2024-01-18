@@ -1,53 +1,51 @@
-<!-- JAVASCRIPT -->
+  <!-- JAVASCRIPT -->
 <script> 
-import { slide, fade } from 'svelte/transition';
-import { quintOut } from 'svelte/easing';
-import Donate from './Donate.svelte';
+  import { slide, fade } from 'svelte/transition';
+  import { quintOut } from 'svelte/easing';
+  import Donate from './Donate.svelte';
 
-// connect to stripe API 
-let stripeURL = "https://buy.stripe.com/9AQ5lY0eP7tE4x24gg";
+  // connect to stripe API 
+  let stripeURL = "https://stripe.com/";
 
-// take donation data from API 
-const money_raised_api = 34000;
-const money_goal_api = 55000;
-const donations_api = 1420;
- 
-// format API data to $USD
-let currency = Intl.NumberFormat('en-US', {
-  style: 'currency',
-  currency: 'USD',
-  maximumFractionDigits: 0
-});
-
-let money_raised = currency.format(money_raised_api);
-let money_goal = currency.format(money_goal_api);
-let donations = donations_api;
-const progress_percentage = Math.floor(money_raised_api/money_goal_api*100);
-
-
-function updateProgressBar() {
-  const progressBarElements = document.querySelectorAll('.progress-bar'); // returns collection
-  progressBarElements.forEach(function(progressBar) {
-    progressBar.style.width = `${progress_percentage}%`;
+  // take donation data from API 
+  const money_raised_api = 34000;
+  const money_goal_api = 55000;
+  const donations_api = 1420;
+   
+  // format API data to $USD
+  let currency = Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+    maximumFractionDigits: 0
   });
-}
 
-let donationOpen = false; 
-
-function openDonate() {
-  donationOpen = true;
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-  updateProgressBar();
-});
+  let money_raised = currency.format(money_raised_api);
+  let money_goal = currency.format(money_goal_api);
+  let donations = donations_api;
+  const progress_percentage = Math.floor(money_raised_api/money_goal_api*100);
 
 
+  function updateProgressBar() {
+    const progressBarElements = document.querySelectorAll('.progress-bar'); // returns collection
+    progressBarElements.forEach(function(progressBar) {
+      progressBar.style.width = `${progress_percentage}%`;
+    });
+  }
+
+  let donationOpen = false; 
+
+  function openDonate() {
+    donationOpen = true;
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    updateProgressBar();
+  });
 </script>
 
 
 
-<!-- HTML -->
+  <!-- HTML -->
 <div class="goal-progress-container">
   <div class="goal-content">
     
@@ -83,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-<!-- CSS -->
+  <!-- CSS -->
 <style>
 .goal-progress-container {
   width: 100%;

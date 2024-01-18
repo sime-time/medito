@@ -1,10 +1,15 @@
 <!-- JAVASCRIPT -->
 <script>
 import GoalProgress from './GoalProgress.svelte';
+import Notification from './Notification.svelte';
 import FAQ from './FAQ.svelte';
 import fundraiserImg from '../assets/fundraiser-photo.jpg';
 let fundraiser_title = "Community Service Campaign";
-let fundraiser_description = `For the past 20 years I have been a licensed
+
+// you can use html code to add variation to the desc like
+// indentation, new lines<br/>, or titles <h3> etc.
+let fundraiser_description = `
+For the past 20 years I have been a licensed
 barber/cosmetologist in my hometown of
 Cincinnati, Ohio. As of 2019 I took a step
 toward entrepreneurship in the personal care
@@ -24,8 +29,9 @@ are always excited to tell me about school and
 the activities they are involved in. I am grateful
 for these relationships and the space I have
 available to listen, encourage and support as
-best I can.
- 
+best I can. 
+<br/>
+<br/>
 One relationship that has really been humbling
 for me, is a young man whose mother drives
 over an hour to receive a haircut for her son.
@@ -39,10 +45,13 @@ special needs.`;
 
 
 <!-- HTML -->
-<div class="container">
+<div class="title-container">
   <h1 class="title">{fundraiser_title}</h1>
+  <div class="noti-container">
+    <Notification />
+  </div>
 </div>
-<div class="container">
+<div class="main-body-container">
    <div id="left-content">
     <div class="img-container">
       <img src={fundraiserImg} alt="fundraiser" />
@@ -52,7 +61,7 @@ special needs.`;
     </div>
     <div id="description">
       <h3 class="small-title">Purpose:</h3>
-      <p class="truncated-text">{fundraiser_description}</p>
+      <p class="description-text">{@html fundraiser_description}</p>
       <div class="expand-container"><input class="expand-button" type="checkbox"></div>
     </div>
     <FAQ />
@@ -69,9 +78,22 @@ special needs.`;
 <!-- CSS -->
 <style>
 .title {
-  padding-bottom: 0.5em;
+  flex: 2;
 }
-.container {
+.noti-container {
+  flex: 1;
+}
+.title-container {
+  max-width: var(--max-width);
+  margin: auto;
+  margin-bottom: 1em;
+  padding-inline: 1em;
+  display: flex;
+  flex-direction: row; 
+  justify-content: space-between;
+  gap: 1em;
+}
+.main-body-container {
   max-width: var(--max-width);
   margin: auto;
   padding-inline: 1em;
@@ -111,7 +133,7 @@ special needs.`;
   line-height: 1.5;
 }
 
-.truncated-text {
+.description-text {
   --max-lines: 4;
   --line-height: 1.5;
 
@@ -121,8 +143,7 @@ special needs.`;
   overflow: hidden;
   position: relative;
 }
-
-.truncated-text:has(+ .expand-container > .expand-button:not(:checked))::before {
+.description-text:has(+ .expand-container > .expand-button:not(:checked))::before {
   content: "";
   position: absolute;
   height: calc(1em * var(--line-height));
@@ -130,6 +151,12 @@ special needs.`;
   bottom: 0;
   pointer-events: none;
   background: linear-gradient(to bottom, transparent, var(--background));
+}
+/* when the .description-text class has a sibling named expand-container,
+   if the checkbox inside of the container is checked, then remove 
+   the max-height limitation and gradient effects. */
+.description-text:has(+ .expand-container > .expand-button:checked) {
+  max-height: none;
 }
 
 .expand-container {
@@ -147,7 +174,6 @@ special needs.`;
   width: 50%;
   text-align: center;
 }
-
 .expand-button:hover {
   color: var(--secondary);
 }
@@ -161,12 +187,7 @@ special needs.`;
   content: "show less";
   max-width: 100%;
 }
-/* when the .truncated-text class has a sibling named expand-container,
-   if the checkbox inside of the container is checked, then remove 
-   the max-height limitation and gradient effects. */
-.truncated-text:has(+ .expand-container > .expand-button:checked) {
-  max-height: none;
-}
+
 
 @media(max-width: 768px) {
   #description {
@@ -178,6 +199,9 @@ special needs.`;
   #goal-container-mobile {
     display: flex;
     margin-block: 1em;
+  }
+  .title-container {
+    flex-direction: column;
   }
 }
 
