@@ -1,3 +1,4 @@
+<!-- JAVASCRIPT -->
 <script>
   export let logo_src;
   export let logo_url;
@@ -24,6 +25,9 @@
 
 </script>
 
+
+
+<!-- HTML -->
 <nav class="nav-bar">
   <!-- LOGO -->
   <div class="nav-branding">
@@ -47,6 +51,9 @@
   </button>
 </nav>
 
+
+
+<!-- CSS -->
 <style>
   .nav-bar {
     max-width: var(--max-width);

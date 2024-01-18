@@ -9,7 +9,7 @@ let faqItems = [
   {isOpen: false, question: "How are audiobooks delivered?", answer: "I've partnered with the great Libro.fm to make it easier for people who don't want to wrangle sideloading their own media. If you choose Libro.fm for audiobook delivery, you'll get a download code by email. Just install the Libro app (for iOS or Android), enter the code, and the book will show up in your account (Libro also lets you download all the books in your library as MP3s)."},
   {isOpen: false, question: "Where do signed books ship from?", answer: "Signed books get fulfilled by LA's Book Soup/Vroman's, a superb, independent bookseller. I drop by to sign books there once per week, and they ship all over the world for me. Non-US buyers may have the pay customs charges when these books arrive."},
   {isOpen: false, question: "Will I get the US or UK covers on my print books?", answer: "Backers in Canada and the USA will get the US cover. from Tor Books. All other backers will get the UK cover, from Head of Zeus."},
-  {isOpen: false, question: "Have another question?", answer: "INSERT FORM"}
+  {isOpen: false, question: "Have another question?", answer: "FORM"}
 ]; 
 
 // open answer block when question is clicked 
@@ -40,7 +40,7 @@ function toggleAnswer(index) {
       {#if item.isOpen}
         <div class="answer" transition:slide={{ delay: 0, duration: 500, easing: quintOut, axis: 'y' }} >
 
-          {#if item.answer == "INSERT FORM"}
+          {#if item.answer == "FORM"}
             <Form /> 
           {:else}
             {item.answer}

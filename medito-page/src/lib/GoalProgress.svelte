@@ -1,5 +1,7 @@
 <!-- JAVASCRIPT -->
 <script> 
+import Donate from './Donate.svelte';
+
 // take donation data from API 
 const money_raised_api = 34000;
 const money_goal_api = 55000;
@@ -27,6 +29,7 @@ function updateProgressBar(percent) {
 document.addEventListener("DOMContentLoaded", () => {
   updateProgressBar(progress_percentage);
 });
+
 </script>
 
 
@@ -35,7 +38,6 @@ document.addEventListener("DOMContentLoaded", () => {
 <div class="goal-progress-container">
   <div class="goal-content">
     
-
     <div class="goal-numbers">
       <h2 class="small-title">{money_raised}
        <span class="subtext"> raised of {money_goal} goal!</span>
@@ -44,12 +46,13 @@ document.addEventListener("DOMContentLoaded", () => {
     <div class="progress-bar-container">
       <div class="progress-bar"></div>
     </div>
-    <div class="donations">
+    <div class="donation-numbers">
       <h3 class="progress-percent">{progress_percentage.toString()}% Complete</h3>
       <h3 class="subtext">{donations} donations</h3>
     </div>
     <div class="button-container">
       <div class="share-button">Share</div>
+      <!-- <Donate /> -->
       <div class="donate-button">Donate</div>
     </div>
 
@@ -81,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
   display: flex;
   flex-direction: row;
 }
-.donations {
+.donation-numbers {
   display: flex;
   flex-direction: row;
   justify-content: space-between;

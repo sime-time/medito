@@ -29,8 +29,8 @@
 * {
   padding: 0;
   margin: 0;
-  /* bugfix with borders */
-  border: 0.5px dashed red;
+  /* bugfix with borders 
+  border: 0.5px dashed red; */
 }
 
 #app {

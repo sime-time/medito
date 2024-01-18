@@ -45,14 +45,15 @@ special needs.`;
 <div class="container">
    <div id="left-content">
     <div class="img-container">
-      <img src={fundraiserImg} alt="fundraising topic" />
+      <img src={fundraiserImg} alt="fundraiser" />
     </div>
     <div id="goal-container-mobile">
       <GoalProgress />
     </div>
     <div id="description">
       <h3 class="small-title">Purpose:</h3>
-      <p>{fundraiser_description}</p>
+      <p class="truncated-text">{fundraiser_description}</p>
+      <div class="expand-container"><input class="expand-button" type="checkbox"></div>
     </div>
     <FAQ />
   </div>
@@ -91,7 +92,7 @@ special needs.`;
 }
 
 #goal-container {
-  position: sticky;
+  position: sticky; 
   top: 1em;
 }
 
@@ -110,6 +111,55 @@ special needs.`;
   line-height: 1.5;
 }
 
+.truncated-text {
+  --max-lines: 4;
+  --line-height: 1.5;
+
+  max-height: calc(var(--max-lines) * 1em * var(--line-height));
+  line-height: var(--line-height);
+
+  overflow: hidden;
+  position: relative;
+}
+
+.truncated-text:has(+ .expand-container > .expand-button:not(:checked))::before {
+  content: "";
+  position: absolute;
+  height: calc(1em * var(--line-height));
+  width: 100%;
+  bottom: 0;
+  pointer-events: none;
+  background: linear-gradient(to bottom, transparent, var(--background));
+}
+
+.expand-container {
+  display: flex;
+  justify-content: center;
+}
+
+.expand-button {
+  appearance: none; /* removes the checkbox */
+  color: var(--primary);
+}
+
+.expand-button:hover {
+  color: var(--secondary);
+}
+
+.expand-button::before {
+  content: "show more";
+}
+
+.expand-button:checked::before {
+  content: "show less";
+}
+/* when the .truncated-text class has a sibling named expand-container,
+   if the checkbox inside of the container is checked, then remove 
+   the max-height limitation and gradient effects. */
+.truncated-text:has(+ .expand-container > .expand-button:checked) {
+  max-height: none;
+}
+
 @media(max-width: 768px) {
   #description {
     width: 100%;
@@ -124,4 +174,3 @@ special needs.`;
 }
 
 </style>
-
