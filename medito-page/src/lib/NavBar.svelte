@@ -40,7 +40,7 @@
   <div class="nav-menu" class:active={isNavMenuActive}>
     {#each navItems as item} 
     <a href={item.href} class={item.class} on:click={closeMenu}>{item.label}</a>
-    {/each}
+    {/each} 
   </div>
 
   <!-- HAMBURGER -->

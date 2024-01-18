@@ -29,8 +29,8 @@
 * {
   padding: 0;
   margin: 0;
-  /* bugfix with borders 
-  border: 0.5px dashed red; */
+  /* bugfix with borders */
+  border: 0.5px dashed red;
 }
 
 #app {
@@ -68,6 +68,8 @@ body::-webkit-scrollbar-thumb {
   box-shadow: 3px 3px var(--foreground);
   padding: 1em;
   text-align: center;
+  text-decoration: none;
+  font-size: 1em;
   transition: 0.2s ease;
 }
 .donate-button:hover {
@@ -86,6 +88,8 @@ body::-webkit-scrollbar-thumb {
   box-shadow: 3px 3px var(--foreground);
   padding: 1em;
   text-align: center;
+  text-decoration: none;
+  font-size: 1em;
   transition: 0.2s ease;
 }
 .share-button:hover {

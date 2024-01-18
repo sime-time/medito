@@ -1,5 +1,7 @@
 <!-- JAVASCRIPT -->
 <script> 
+import { slide, fade } from 'svelte/transition';
+import { quintOut } from 'svelte/easing';
 import Donate from './Donate.svelte';
 
 // take donation data from API 
@@ -7,9 +9,9 @@ const money_raised_api = 34000;
 const money_goal_api = 55000;
 const donations_api = 1420;
 const progress_percentage = Math.floor(money_raised_api/money_goal_api*100);
-
+ 
 // format API data to $USD
-const currency = Intl.NumberFormat('en-US', {
+let currency = Intl.NumberFormat('en-US', {
   style: 'currency',
   currency: 'USD',
   maximumFractionDigits: 0
@@ -24,6 +26,12 @@ function updateProgressBar(percent) {
   progressBarElements.forEach(function(progressBar) {
     progressBar.style.width = percent + '%';
   });
+}
+
+let donationOpen = false; 
+
+function openDonate() {
+  donationOpen = true;
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -51,9 +59,18 @@ document.addEventListener("DOMContentLoaded", () => {
       <h3 class="subtext">{donations} donations</h3>
     </div>
     <div class="button-container">
+
       <div class="share-button">Share</div>
-      <!-- <Donate /> -->
-      <div class="donate-button">Donate</div>
+      <!-- if donationOpen is true, then switch out the Donation button 
+           and add donation panel -->
+      {#if donationOpen}
+        <div class="donation-panel" transition:slide={{ delay: 0, duration: 700, easing: quintOut, axis: 'y' }} >
+          <Donate />
+          <a class="donate-button" href="#">Continue</a> <!-- link to payment page --> 
+        </div>
+      {:else}
+        <button class="donate-button" on:click={openDonate} transition:fade={{ delay: 0, duration: 20}}>Donate</button>
+      {/if}
     </div>
 
   </div>
@@ -111,4 +128,9 @@ document.addEventListener("DOMContentLoaded", () => {
   transition: width 0.3s ease-in-out; /* Add a smooth transition effect */
 }
 
+.donation-panel {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
 </style> 
