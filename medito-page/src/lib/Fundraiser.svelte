@@ -143,6 +143,7 @@ special needs.`;
   appearance: none; /* removes the checkbox */
   color: var(--primary);
   padding: 0.5em;
+  max-width: 100%;
 }
 
 .expand-button:hover {
@@ -151,10 +152,12 @@ special needs.`;
 
 .expand-button::before {
   content: "show more";
+  max-width: 100%;
 }
 
 .expand-button:checked::before {
   content: "show less";
+  max-width: 100%;
 }
 /* when the .truncated-text class has a sibling named expand-container,
    if the checkbox inside of the container is checked, then remove 
