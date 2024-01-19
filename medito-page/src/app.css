@@ -12,8 +12,8 @@
 
   color-scheme: light dark;
   --foreground: #0c0c0c;
-  --primary: #c48de2;
-  --secondary: #7768df;
+  --primary: #fa9338;
+  --secondary: #7247ff;
   --tertiary: #c2c2c2;
   --background: #ffffff;
   --background-accent: #eeeeee;
@@ -79,6 +79,14 @@ body::-webkit-scrollbar-thumb {
   border: 2px solid var(--primary);
   box-shadow: none;
 }
+.donate-button:focus {
+  color: var(--primary);
+  background-color: var(--background);
+  border-radius: var(--border-radius);
+  border: 2px solid var(--primary);
+  box-shadow: none;
+}
+
 .share-button {
   cursor: pointer;
   color: var(--background);
@@ -93,6 +101,13 @@ body::-webkit-scrollbar-thumb {
   transition: 0.2s ease;
 }
 .share-button:hover {
+  color: var(--secondary);
+  background-color: var(--background);
+  border-radius: var(--border-radius);
+  border: 2px solid var(--secondary);
+  box-shadow: none;
+}
+.share-button:focus {
   color: var(--secondary);
   background-color: var(--background);
   border-radius: var(--border-radius);
