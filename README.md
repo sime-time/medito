@@ -1,18 +1,18 @@
 # README:
 
-- Different features are segregated into .svelte files under /lib folder.
+- Different features are segregated into .svelte files under /medito-page/src/lib folder.
 - Each svelte file is separated into Javascript, HTML, and CSS code respectively.
-- This makes it so features are separated from each other.
+- (This makes it so features are separated from each other.)
 
 - To change the content, update the variables in each Javascript section <script>.
-- I can make it so there is only one file needed to change the entire fundraising page (if necessary)
-- colors can be changed in "app.css" the --primary and --secondary variables will change the entire page for example.
+- I can make it so there is only one file to be edited to change the entire fundraising page (if necessary)
+- colors and other styles can be changed with variables in "app.css"
+- the --primary and --secondary variables will change the entire page for example.
 
 ## Notes
 
 - I did not have time to do any backend work and integrate with stripe.
 - I am more than willing to add more features completely free for the medito foundation
-- The site is hosted on cloudflare using my personal domain, dreamcatch.app
 
 # Project Brief: Flexible Fundraising Single Web Page
 
