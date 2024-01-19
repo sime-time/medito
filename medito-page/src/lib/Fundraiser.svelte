@@ -173,14 +173,14 @@ special needs.`;
 
 .expand-button {
   appearance: none; /* removes the checkbox */
-  color: var(--primary);
+  color: var(--secondary);
   padding: 0.5em;
   max-width: 100%;
   width: 50%;
   text-align: center;
 }
 .expand-button:hover {
-  color: var(--secondary);
+  color: var(--primary);
 }
 
 .expand-button::before {
