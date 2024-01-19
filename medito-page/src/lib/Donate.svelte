@@ -144,6 +144,7 @@ select {
   padding: 0.5em;
   background: var(--tertiary);
   transition: 0.4s ease;
+  font-family: inherit;
 }
 
 .reward:hover {
@@ -184,6 +185,7 @@ select {
   border-radius: var(--border-radius);
   overflow: hidden;
   height: 5em;
+  font-family: inherit;
 }
 
 .currency-container {
@@ -194,14 +196,17 @@ select {
   background-color: var(--background);
   height: inherit;
   justify-content: center;
+  font-family: inherit;
 }
 .currency-label {
   text-align: center;
   font-size: 1.5em;
+  font-family: inherit;
 }
 .currency-dropdown {
   color: var(--foreground);
   background: inherit;
+  font-family: inherit;
 }
 
 .input-container {
@@ -215,6 +220,7 @@ select {
   background: var(--background);
   font-size: 2em;
   padding-left: 10px;
+  font-family: inherit;
 }
 
 

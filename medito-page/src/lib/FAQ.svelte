@@ -77,7 +77,8 @@ function toggleAnswer(index) {
 }
 
 .question {
-  font-weight: bold;
+  font-weight: 500;
+  font-family: inherit;
   font-size: 1rem;
   padding: 1em;
   border-radius: var(--border-radius);

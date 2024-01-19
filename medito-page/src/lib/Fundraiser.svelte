@@ -173,6 +173,7 @@ special needs.`;
 
 .expand-button {
   appearance: none; /* removes the checkbox */
+  font-family: inherit;
   color: var(--secondary);
   padding: 0.5em;
   max-width: 100%;

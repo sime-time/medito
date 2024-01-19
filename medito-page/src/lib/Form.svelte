@@ -39,6 +39,7 @@ form {
   width: 90%;
   gap: 1em;
   justify-items: space-between;
+  font-family: inherit;
 }
 
 .input-container {
@@ -58,6 +59,7 @@ form {
   border-radius: var(--border-radius);
   color: var(--foreground);
   font-size: 1rem;
+  font-family: inherit;
 }
 .input-container > textarea {
   padding: 1em;
@@ -82,6 +84,7 @@ form {
   padding: 1em;
   text-align: center;
   transition: 0.2s ease;
+  font-family: inherit;
 }
 
 .submit-button:hover {

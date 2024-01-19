@@ -108,6 +108,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
 }
 .progress-percent {
   color: limegreen;
@@ -115,7 +116,7 @@
 }
 .subtext {
   color: var(--tertiary);
-  font-size: 16px;
+  font-size: 14px;
 }
 .progress-bar-container {
   width: 100%;
