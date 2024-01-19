@@ -9,6 +9,14 @@
 - colors and other styles can be changed with variables in "app.css"
 - the --primary and --secondary variables will change the entire page for example.
 
+## How to Build Website
+
+- clone the repository
+- in your terminal, cd into the medito-page folder
+- then type `npm run build`
+- this will compile svelte -> javascript and create a /dist folder with the distributable build code.
+- take all files in /dist folder and copy those files into your web hosting provider
+
 ## Notes
 
 - I did not have time to do any backend work and integrate with stripe.
