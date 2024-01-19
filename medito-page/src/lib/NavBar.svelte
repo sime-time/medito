@@ -151,6 +151,7 @@
       justify-content: flex-start;
       transition: 0.4s;
       height: 100vh;
+      z-index: 999; /* make sure this covers over everything on screen */
     }
 
     .nav-item {
