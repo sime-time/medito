@@ -4,10 +4,9 @@
   export let logo_url;
 
   const navItems = [
-    {label: "Home", href: "#", class: "nav-link"},
-    {label: "About", href: "#", class: "nav-link"},
-    {label: "Contact", href: "#", class: "nav-link"},
-    {label: "Donate", href: "#", class: "nav-link donate-button"}
+    {label: "Home", href: "https://www.meditofoundation.org", class: "nav-link"},
+    {label: "About", href: "#description", class: "nav-link"},
+    {label: "FAQ", href: "#faq", class: "nav-link"},
   ];
 
   let isHamburgerActive = false; 

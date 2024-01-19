@@ -29,6 +29,7 @@
 * {
   padding: 0;
   margin: 0;
+  scroll-behavior: smooth;
   /* bugfix with borders
   border: 0.5px dashed red; */
 }

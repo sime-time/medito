@@ -6,7 +6,7 @@
 
 
 <!-- HTML -->
-<form>
+<form id="contact-form">
 
   <div class="input-container">
     <label for="name">Name</label>

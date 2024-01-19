@@ -22,7 +22,7 @@ function toggleAnswer(index) {
 
 
 <!-- HTML -->
-<div class="faq-container">
+<div class="faq-container" id="faq">
   <h3 class="small-title">Frequently Asked Questions:</h3>
   {#each faqItems as item, i}
     <div class="faq-item">

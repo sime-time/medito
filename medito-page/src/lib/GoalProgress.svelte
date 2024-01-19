@@ -32,7 +32,7 @@
     });
   }
 
-  let donationOpen = false; 
+  var donationOpen = false; 
 
   function openDonate() {
     donationOpen = true;

@@ -17,17 +17,15 @@ let currencies = [
 
 // dynamic bind values for donation amount 
 let amount;
-let minAmount;
 
 function selectReward(index) {
-  // selecting a reward should unselect every other reward 
-  rewards[index].isSelected = true;
-  amount = rewards[index].minimum;
-  minAmount = rewards[index].minimum;
-
+  // selecting a reward should unselect every other reward  
   for (let i = 0; i < rewards.length; i++) {
-    if (!(i===index)) {
-      rewards[i].isSelected = false; 
+    if (i===index) {
+      rewards[i].isSelected = true; 
+      amount = rewards[i].minimum; 
+    } else {
+      rewards[i].isSelected = false;
     }
   }
 }
@@ -65,11 +63,30 @@ function handleAmountInput(event) {
     inputValue = inputValue.slice(0, inputValue.lastIndexOf('.'));
   }
 
-  // update the amount with the cleaned and formatted value
-  amount = inputValue; 
 
-  // TODO: make the selected reward change based on the amount 
+  // select the correct reward depending on the inputValue 
+  // go through all the reward minimums. 
+    // if inputValue is greater than current minimum
+    // and the current minimum is the new greatest_min 
+  let greatest_min = 0; 
+  let selected_index = -1;
+  for (let i = 0; i < rewards.length; i++) {
+    let current_min = rewards[i].minimum; 
+    if (inputValue >= current_min) {
+      if (current_min > greatest_min) {
+        selected_index = i;
+        greatest_min = current_min;
+      }
+    }
+  }
+
+  // update the amount with the cleaned and formatted value
+  selectReward(selected_index);
+  amount = inputValue; 
 }
+
+// handle stripe api payment using current donation amount 
+
 
 </script>
 
