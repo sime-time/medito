@@ -4,7 +4,7 @@
 let rewards = [
   {name: "Diamond", minimum: 100, icon: "fa-solid fa-gem", isSelected: false},
   {name: "Gold", minimum: 50, icon: "fa-solid fa-sack-dollar", isSelected: false},
-  {name: "Iron", minimum: 1, icon: "fa-solid fa-coins", isSelected: false}
+  {name: "Iron", minimum: 5, icon: "fa-solid fa-coins", isSelected: false}
 ]; 
 
 let currencies = [
@@ -68,7 +68,7 @@ function handleAmountInput(event) {
   // update the amount with the cleaned and formatted value
   amount = inputValue; 
 
-  // make the selected reward change based on the amount 
+  // TODO: make the selected reward change based on the amount 
 }
 
 </script>
@@ -118,6 +118,12 @@ function handleAmountInput(event) {
 h4 {
   padding-block: 0.5em;
 }
+input {
+  border: none;
+}
+select {
+  border: none;
+}
 .rewards-container {
   display: flex;
   flex-direction: column;
@@ -133,6 +139,7 @@ h4 {
   display: flex;
   align-items: center;
   border-radius: var(--border-radius);
+  border: none;
   opacity: 0.3;
   padding: 0.5em;
   background: var(--tertiary);

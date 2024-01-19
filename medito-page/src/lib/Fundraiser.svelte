@@ -40,6 +40,7 @@ accommodations needed, this mother could
 not find a barber in her hometown who was
 willing to provide a haircut for her son who has
 special needs.`;
+
 </script>
   
 
@@ -47,7 +48,7 @@ special needs.`;
 <!-- HTML -->
 <div class="title-container">
   <h1 class="title">{fundraiser_title}</h1>
-  <div class="noti-container">
+  <div class="noti-container" >
     <Notification />
   </div>
 </div>
@@ -79,6 +80,9 @@ special needs.`;
 <style>
 .title {
   flex: 2;
+  height: 2em;
+  display: flex;
+  align-items: center;
 }
 .noti-container {
   flex: 1;
@@ -92,6 +96,7 @@ special needs.`;
   flex-direction: row; 
   justify-content: space-between;
   gap: 1em;
+  align-items: center;
 }
 .main-body-container {
   max-width: var(--max-width);
@@ -202,6 +207,9 @@ special needs.`;
   }
   .title-container {
     flex-direction: column;
+  }
+  .noti-container {
+    width: 100%;
   }
 }
 

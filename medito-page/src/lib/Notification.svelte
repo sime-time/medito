@@ -1,25 +1,44 @@
   <!-- JAVASCRIPT -->
 <script>
-  // get API data
-  let donator_spent = 20;
-  let donator_name = "Anon";
-  let donator_currency = "$";
+import { fly } from 'svelte/transition';
+import { linear } from 'svelte/easing';
 
+// get donator data from API 
+let donators = [
+  {name: "Anon", currency: "$", spent: 20}, 
+  {name: "Beta", currency: "$", spent: 15}, 
+  {name: "Chad", currency: "$", spent: 100}
+];
+
+let currentDonatorIndex = 0;
+let showNotification = true;
+
+// updateDonator function is called when the close button is clicked, 
+// and it increments the currentDonatorIndex to cycle through the donators array. 
+function updateDonator() {
+  currentDonatorIndex = (currentDonatorIndex + 1) % donators.length;
+  
+  // once showNotification reaches 0 again the notification will close completely 
+  showNotification = currentDonatorIndex !== 0; 
+}
+
+// The currentDonator variable is reactive, 
+// so the component will automatically update when the current donator changes. 
+$: currentDonator = donators[currentDonatorIndex]; 
 </script>
 
   <!-- HTML -->
-<div class="noti-ribbon">
-
-  <span class="noti-icon">
-    <i class="fa-solid fa-hand-holding-heart"></i>
-  </span>
-  <span class="message">{donator_name} just donated {donator_currency}{donator_spent}</span>
-  <div class="close-button">
-    <span class="fas fa-times"></span>
+{#if currentDonator && showNotification}
+  <div class="noti-ribbon" transition:fly={{ delay: 0, duration: 200, x: 300, y: 0, opacity: 0.5, easing: linear }}>
+    <span class="noti-icon">
+      <i class="fa-solid fa-hand-holding-heart"></i>
+    </span>
+    <span class="message">{currentDonator.name} just donated {currentDonator.currency}{currentDonator.spent}</span>
+    <button class="close-button" on:click={updateDonator}>
+      <span class="fas fa-times"></span>
+    </button>
   </div>
-
-</div>
-
+{/if}
   <!-- CSS -->
 <style>
 .noti-ribbon {
@@ -56,6 +75,9 @@
   justify-content: center;
   height: 100%;
   cursor: pointer;
+  background: inherit;
+  color: inherit;
+  border: none;
 }
 .fa-times {
   font-size: 1.5em;
