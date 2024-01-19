@@ -153,7 +153,7 @@ select {
 .reward.active {
   color: var(--background);
   opacity: 1;
-  background: var(--primary);
+  background: var(--secondary);
 }
 
 .reward > i {
