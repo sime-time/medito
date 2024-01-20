@@ -1,4 +1,4 @@
-# README:
+# README
 
 - Different features are segregated into .svelte files under `/medito-page/src/lib` folder.
 - Each svelte file is separated into Javascript, HTML, and CSS code respectively.
@@ -9,7 +9,7 @@
 
 # How to Update Content
 
-- Change the variables in `/medito-page/src/lib/App.svelte` (all data about the fundraiser is on all on this page under <script>)
+- Change the variables in `/medito-page/src/lib/App.svelte` (all data about the fundraiser is on all on this page under `<script>`)
 - This is meant to pass on data from API and data storage all in one place.
 - Colors and other styles can be changed with global variables in `app.css`
 - For example, the `--primary` and `--secondary` variables will change the colors of the entire page.
@@ -24,7 +24,7 @@
 
 ---
 
-## Objective:
+# Project Objective:
 
 Develop a versatile single web page that can be adapted for various fundraising initiatives, such as hiring personnel, creating ad campaigns, or developing new features. The page should be designed to engage visitors and encourage donations with an interactive and user-friendly interface.
 
@@ -68,7 +68,7 @@ Develop a versatile single web page that can be adapted for various fundraising 
 - ~~The page should have a clean, modern aesthetic that can be easily changed for various campaigns. Keep the design simple, no fancy colors, no images. Purely text-based.~~
 - ~~The code should be optimized for hosting on Cloudflare Pages.~~
 
-## Development and Deployment:
+## ~~Development and Deployment:~~
 
 - ~~Ensure that the site structure allows for easy content updates for different campaigns.~~
 - ~~The codebase should be maintainable.~~
