@@ -17,7 +17,7 @@
 # How to Build Website
 
 - clone the repository
-- in your terminal, cd into the medito-page folder
+- in your terminal, cd into the `/medito-page` folder
 - type `npm run build`
 - this will create a `/docs` folder with the distributable build code.
 - use the files in `/docs` to host on cloudflare pages.
