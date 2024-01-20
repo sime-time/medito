@@ -1,6 +1,6 @@
 # README
 
-- Different features are segregated into .svelte files under `/medito-page/src/lib` folder.
+- Different features are segregated into .svelte files under `/src/lib` folder.
 - Each svelte file is separated into Javascript, HTML, and CSS code respectively.
 - This makes it so project features are separated from each other
 - The `/docs` build folder is for cloudflare/github pages
@@ -9,7 +9,7 @@
 
 # How to Update Content
 
-- Change the variables in `/medito-page/src/lib/App.svelte` (all data about the fundraiser is on all on this page under `<script>`)
+- Change the variables in `/src/lib/App.svelte` (all data about the fundraiser is on all on this page under `<script>`)
 - This is meant to pass on data from API and data storage all in one place.
 - Colors and other styles can be changed with global variables in `app.css`
 - For example, the `--primary` and `--secondary` variables will change the colors of the entire page.
@@ -17,7 +17,6 @@
 # How to Build Website
 
 - clone the repository
-- in your terminal, cd into the `/medito-page` folder
 - type `npm run build`
 - this will create a `/docs` folder with the distributable build code.
 - use the files in `/docs` to host on cloudflare pages.
