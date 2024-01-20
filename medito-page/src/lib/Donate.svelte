@@ -1,19 +1,7 @@
-<!-- JAVASCRIPT -->
+  <!-- JAVASCRIPT -->
 <script>
-
-let rewards = [
-  {name: "Diamond", minimum: 100, icon: "fa-solid fa-gem", isSelected: false},
-  {name: "Gold", minimum: 50, icon: "fa-solid fa-sack-dollar", isSelected: false},
-  {name: "Iron", minimum: 5, icon: "fa-solid fa-coins", isSelected: false}
-]; 
-
-let currencies = [
-  {name: "USD", icon: "&#36;"},
-  {name: "EUR", icon: "&#8364;"},
-  {name: "CAD", icon: "&#36;"},
-  {name: "GBP", icon: "&#163;"},
-  {name: "AUD", icon: "&#36;"}
-];
+export let rewards; 
+export let currencies;
 
 // dynamic bind values for donation amount 
 let amount;
@@ -37,6 +25,7 @@ function handleCurrencyChange(event) {
   selectedCurrency = event.target.value;
   selectedCurrencyIcon = getCurrencyIcon();
 }
+
 function getCurrencyIcon() {
   if (selectedCurrency) {
     // find the currency with the matching name
@@ -85,13 +74,14 @@ function handleAmountInput(event) {
   amount = inputValue; 
 }
 
+
 // handle stripe api payment using current donation amount 
 
 
 </script>
 
 
-<!-- HTML -->
+  <!-- HTML -->
 <div class="panel-container">
 
   <h4>Rewards</h4>
@@ -125,12 +115,12 @@ function handleAmountInput(event) {
     </div>
   </div>
 
-
 </div>
 
+<!-- this button has the same html placement as the previous donate button --> 
+<a class="donate-button" href="https://www.stripe.com">Continue</a> 
 
-
-<!-- CSS -->
+  <!-- CSS -->
 <style>
 h4 {
   padding-block: 0.5em;

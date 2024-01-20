@@ -4,25 +4,26 @@
   import { quintOut } from 'svelte/easing';
   import Donate from './Donate.svelte';
 
-  // connect to stripe API 
-  let stripeURL = "https://stripe.com/";
+  // pass these props to Donate.svelte 
+  export let currencies;
+  export let rewards;
 
   // take donation data from API 
-  const money_raised_api = 34000;
-  const money_goal_api = 55000;
-  const donations_api = 1420;
-   
+  export let donation_stats;
+  console.log(donation_stats.money_goal);
+
   // format API data to $USD
   let currency = Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'USD',
     maximumFractionDigits: 0
   });
-
-  let money_raised = currency.format(money_raised_api);
-  let money_goal = currency.format(money_goal_api);
-  let donations = donations_api;
-  const progress_percentage = Math.floor(money_raised_api/money_goal_api*100);
+  
+  // translate donation API data for front-end text
+  const progress_percentage = Math.floor(donation_stats.money_raised/donation_stats.money_goal*100);
+  let money_raised = currency.format(donation_stats.money_raised);
+  let money_goal = currency.format(donation_stats.money_goal);
+  let total_donations = donation_stats.total_donations.toString();
 
 
   function updateProgressBar() {
@@ -59,7 +60,7 @@
     </div>
     <div class="donation-numbers">
       <h3 class="progress-percent">{progress_percentage.toString()}% Complete</h3>
-      <h3 class="subtext">{donations} donations</h3>
+      <h3 class="subtext">{total_donations} donations</h3>
     </div>
     <div class="button-container">
 
@@ -68,8 +69,7 @@
            and add donation panel -->
       {#if donationOpen}
         <div class="donation-panel" transition:slide={{ delay: 0, duration: 700, easing: quintOut, axis: 'y' }} >
-          <Donate />
-          <a class="donate-button" href={stripeURL}>Continue</a> <!-- link to payment page --> 
+          <Donate rewards={rewards} currencies={currencies} />
         </div>
       {:else}
         <button class="donate-button" on:click={openDonate} transition:fade={{ delay: 0, duration: 20}}>Donate</button>

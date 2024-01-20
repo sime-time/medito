@@ -3,43 +3,15 @@
 import GoalProgress from './GoalProgress.svelte';
 import Notification from './Notification.svelte';
 import FAQ from './FAQ.svelte';
-import fundraiserImg from '../assets/fundraiser-photo.jpg';
-let fundraiser_title = "Community Service Campaign";
+import fundraiser_image from '../assets/fundraiser-photo.jpg';
 
-// you can use html code to add variation to the desc like
-// indentation, new lines<br/>, or titles <h3> etc.
-let fundraiser_description = `
-For the past 20 years I have been a licensed
-barber/cosmetologist in my hometown of
-Cincinnati, Ohio. As of 2019 I took a step
-toward entrepreneurship in the personal care
-industry and became owner of Noble Barber &
-Beauty. During my role of both owner and
-barber, I have been given the opportunity to
-build strong relationships with those who enter
-the barbershop. As my shop provides a
-supportive environment; clients feel
-comfortable in sharing stories of struggle and
-triumph, good days and bad. On any given day,
-barbershop talk might range from a recap of
-the latest sports game to updates on births of
-children and grandchildren. Clients may tell of
-challenges experienced at work, while youth
-are always excited to tell me about school and
-the activities they are involved in. I am grateful
-for these relationships and the space I have
-available to listen, encourage and support as
-best I can. 
-<br/>
-<br/>
-One relationship that has really been humbling
-for me, is a young man whose mother drives
-over an hour to receive a haircut for her son.
-Due to the additional time required and
-accommodations needed, this mother could
-not find a barber in her hometown who was
-willing to provide a haircut for her son who has
-special needs.`;
+export let title;
+export let description; 
+export let faq_items; 
+export let donators;
+export let rewards;
+export let currencies; 
+export let donation_stats;
 
 </script>
   
@@ -47,29 +19,29 @@ special needs.`;
 
 <!-- HTML -->
 <div class="title-container">
-  <h1 class="title">{fundraiser_title}</h1>
+  <h1 class="title">{title}</h1>
   <div class="noti-container" >
-    <Notification />
+    <Notification donators={donators}/>
   </div>
 </div>
 <div class="main-body-container">
    <div id="left-content">
     <div class="img-container">
-      <img src={fundraiserImg} alt="fundraiser" />
+      <img src={fundraiser_image} alt="fundraising topic" />
     </div>
     <div id="goal-container-mobile">
-      <GoalProgress />
+      <GoalProgress donation_stats={donation_stats} rewards={rewards} currencies={currencies} />
     </div>
     <div id="description">
       <h3 class="small-title">Purpose:</h3>
-      <p class="description-text">{@html fundraiser_description}</p>
+      <p class="description-text">{@html description}</p>
       <div class="expand-container"><input class="expand-button" type="checkbox"></div>
     </div>
-    <FAQ />
+    <FAQ faq_items={faq_items} />
   </div>
   <div id="right-content">
     <div id="goal-container">
-      <GoalProgress />
+      <GoalProgress donation_stats={donation_stats} rewards={rewards} currencies={currencies}/>
     </div>
   </div>
 </div>

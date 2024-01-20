@@ -81,13 +81,6 @@ body::-webkit-scrollbar-thumb {
   border: 2px solid var(--primary);
   box-shadow: none;
 }
-.donate-button:focus {
-  color: var(--primary);
-  background-color: var(--background);
-  border-radius: var(--border-radius);
-  border: 2px solid var(--primary);
-  box-shadow: none;
-}
 
 .share-button {
   cursor: pointer;

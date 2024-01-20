@@ -4,11 +4,7 @@ import { fly } from 'svelte/transition';
 import { linear } from 'svelte/easing';
 
 // get donator data from API 
-let donators = [
-  {name: "Anon", currency: "$", spent: 20}, 
-  {name: "Beta", currency: "$", spent: 15}, 
-  {name: "Chad", currency: "$", spent: 100}
-];
+export let donators;
 
 let currentDonatorIndex = 0;
 let showNotification = true;
@@ -27,6 +23,9 @@ function updateDonator() {
 $: currentDonator = donators[currentDonatorIndex]; 
 </script>
 
+
+
+
   <!-- HTML -->
 {#if currentDonator && showNotification}
   <div class="noti-ribbon" transition:fly={{ delay: 0, duration: 200, x: 300, y: 0, opacity: 0.5, easing: linear }}>
@@ -39,6 +38,10 @@ $: currentDonator = donators[currentDonatorIndex];
     </button>
   </div>
 {/if}
+    
+
+
+
   <!-- CSS -->
 <style>
 .noti-ribbon {
