@@ -2,14 +2,17 @@
 
 - Different features are segregated into .svelte files under /medito-page/src/lib folder.
 - Each svelte file is separated into Javascript, HTML, and CSS code respectively.
-- (This makes it so features are separated from each other.
+- This makes it so project features are separated from each other
+- The /docs folder is only for github pages
+- I did not have time to do any backend work and integrate with stripe
+- I am more than willing to continue working on this for the medito foundation for free.
 
 # How to Update Content
 
 - Change the variables in App.svelte (all data about the fundraiser is on all on this page under <script>)
 - This is meant to pass on data from API and data storage all in one place.
 - Colors and other styles can be changed with global variables in "app.css"
-- the --primary and --secondary variables will change the colors of the entire page for example.
+- For example, the --primary and --secondary variables will change the colors of the entire page.
 
 # How to Build Website
 
@@ -19,13 +22,7 @@
 - this will compile svelte into pure javascript and create a /dist folder with the distributable build code.
 - use the files in /dist to host on cloudflare.
 
-# Notes
-
-- The /docs folder is only for github pages
-- I did not have time to do any backend work and integrate with stripe
-- I am more than willing to continue working on this for the medito foundation for free.
-
-#############################################################
+---
 
 ## Objective:
 
@@ -53,7 +50,7 @@ Develop a versatile single web page that can be adapted for various fundraising 
 ### Donation Section:
 
 - ~~An input field for donors to specify an amount, with validation to ensure it's a legitimate figure.~~
-- Integration with Stripe checkout for secure transactions, with support for multiple currencies.
+- Integration with Stripe checkout for secure transactions, ~~with support for multiple currencies.~~
 - ~~A donation button that is prominently displayed and accessible.~~
 
 ### ~~Rewards for Donors:~~
@@ -65,7 +62,7 @@ Develop a versatile single web page that can be adapted for various fundraising 
 - ~~A notification feature at the top of the page that showcases recent donations.~~
 - ~~The ability to connect this feature to an API endpoint, allowing for real-time updates at specified intervals.~~
 
-## Design and Hosting Requirements:
+## ~~Design and Hosting Requirements:~~
 
 - ~~The design must be responsive, ensuring functionality across all devices.~~
 - ~~The page should have a clean, modern aesthetic that can be easily changed for various campaigns. Keep the design simple, no fancy colors, no images. Purely text-based.~~
@@ -73,10 +70,10 @@ Develop a versatile single web page that can be adapted for various fundraising 
 
 ## Development and Deployment:
 
-- Ensure that the site structure allows for easy content updates for different campaigns.
-- The codebase should be maintainable.
+- ~~Ensure that the site structure allows for easy content updates for different campaigns.~~
+- ~~The codebase should be maintainable.~~
 - All forms should include appropriate validation checks, including spam prevention mechanisms.
-- The project will be open-sourced on GitHub, and the deployment process must be documented to facilitate easy setup on Cloudflare Pages.
+- ~~The project will be open-sourced on GitHub, and the deployment process must be documented to facilitate easy setup on Cloudflare Pages.~~
 
 ## Reward Offer:
 
