@@ -1,26 +1,26 @@
 # README:
 
-- Different features are segregated into .svelte files under /medito-page/src/lib folder.
+- Different features are segregated into .svelte files under `/medito-page/src/lib` folder.
 - Each svelte file is separated into Javascript, HTML, and CSS code respectively.
 - This makes it so project features are separated from each other
-- The /docs folder is only for github pages
+- The `/docs` build folder is for cloudflare/github pages
 - I did not have time to do any backend work and integrate with stripe
 - I am more than willing to continue working on this for the medito foundation for free.
 
 # How to Update Content
 
-- Change the variables in App.svelte (all data about the fundraiser is on all on this page under <script>)
+- Change the variables in `/medito-page/src/lib/App.svelte` (all data about the fundraiser is on all on this page under <script>)
 - This is meant to pass on data from API and data storage all in one place.
-- Colors and other styles can be changed with global variables in "app.css"
-- For example, the --primary and --secondary variables will change the colors of the entire page.
+- Colors and other styles can be changed with global variables in `app.css`
+- For example, the `--primary` and `--secondary` variables will change the colors of the entire page.
 
 # How to Build Website
 
 - clone the repository
 - in your terminal, cd into the medito-page folder
-- then type `npm run build`
-- this will compile svelte into pure javascript and create a /dist folder with the distributable build code.
-- use the files in /dist to host on cloudflare.
+- type `npm run build`
+- this will create a `/docs` folder with the distributable build code.
+- use the files in `/docs` to host on cloudflare pages.
 
 ---
 
@@ -72,27 +72,9 @@ Develop a versatile single web page that can be adapted for various fundraising 
 
 - ~~Ensure that the site structure allows for easy content updates for different campaigns.~~
 - ~~The codebase should be maintainable.~~
-- All forms should include appropriate validation checks, including spam prevention mechanisms.
+- ~~All forms should include appropriate validation checks, including spam prevention mechanisms.~~
 - ~~The project will be open-sourced on GitHub, and the deployment process must be documented to facilitate easy setup on Cloudflare Pages.~~
 
 ## Reward Offer:
 
 We're offering a $500 reward for a single web page that aligns with our brief: adaptability for various fundraising goals, a seamless user experience, and technical integration. The winning entry must exhibit clear, documented, and maintainable code, along with a responsive and unique design style. The selection will hinge on strict adherence to the specifications in the brief. Payment will be made via bank transfer within a week.
-
-## How To Participate:
-
-- Reply to the Discord thread if you are interested.
-- Once developed, post on Github the public repo.
-- Reply on the Discord thread with the Github URL (ideally host a demo somewhere).
-- Keep an eye on Discord for updates.
-- Deadline is one week from now, which is Thursday, 18th January 2024.
-
-If Discord link does not work, you can join the community by clicking [here](https://discord.gg/rxE5BBMSrZ).
-
-## Inspiration:
-
-- [Gofundme.com](https://www.gofundme.com)
-- [Change.org](https://www.change.org)
-- [Justgiving.com](https://www.justgiving.com)
-- [Kickstarter.com](https://www.kickstarter.com)
-- [Opencollective.com](https://www.opencollective.com)
