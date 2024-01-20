@@ -34,7 +34,7 @@ export let donation_stats;
     </div>
     <div id="description">
       <h3 class="small-title">Purpose:</h3>
-      <p class="description-text">{@html description}</p>
+      <p class="description-text">{description}</p>
       <div class="expand-container"><input class="expand-button" type="checkbox"></div>
     </div>
     <FAQ faq_items={faq_items} />
