@@ -52,6 +52,7 @@ export let donation_stats;
 <style>
 .title {
   flex: 2;
+  font-weight: 500;
   height: 2em;
   display: flex;
   align-items: center;
