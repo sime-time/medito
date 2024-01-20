@@ -2,27 +2,32 @@
 
 - Different features are segregated into .svelte files under /medito-page/src/lib folder.
 - Each svelte file is separated into Javascript, HTML, and CSS code respectively.
-- (This makes it so features are separated from each other.)
+- (This makes it so features are separated from each other.
 
-- To change the content, update the variables in each Javascript section <script>.
-- I can make it so there is only one file to be edited to change the entire fundraising page (if necessary)
-- colors and other styles can be changed with variables in "app.css"
-- the --primary and --secondary variables will change the entire page for example.
+# How to Update Content
+
+- Change the variables in App.svelte (all data about the fundraiser is on all on this page under <script>)
+- This is meant to pass on data from API and data storage all in one place.
+- Colors and other styles can be changed with global variables in "app.css"
+- the --primary and --secondary variables will change the colors of the entire page for example.
 
 ## How to Build Website
 
 - clone the repository
 - in your terminal, cd into the medito-page folder
 - then type `npm run build`
-- this will compile svelte -> javascript and create a /dist folder with the distributable build code.
-- take all files in /dist folder and copy those files into your web hosting provider
+- this will compile svelte into pure javascript and create a /dist folder with the distributable build code.
+- use the files in /dist to host on cloudflare.
 
 ## Notes
 
-- I did not have time to do any backend work and integrate with stripe.
-- I am more than willing to add more features completely free for the medito foundation
+- The /docs folder is only for github pages
+- I did not have time to do any backend work and integrate with stripe
+- I am more than willing to continue working on this for the medito foundation for free.
 
-# Project Brief: Flexible Fundraising Single Web Page
+#############################################################
+
+# Project Brief Checklist: Flexible Fundraising Single Web Page
 
 ## Objective:
 
