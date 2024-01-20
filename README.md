@@ -5,7 +5,7 @@
 - This makes it so project features are separated from each other
 - The `/docs` build folder is for cloudflare/github pages
 - I did not have time to do any backend work and integrate with stripe
-- I am more than willing to continue working on this for the medito foundation for free.
+- `I am more than willing to continue working on this for the medito foundation for free.`
 
 # How to Update Content
 
