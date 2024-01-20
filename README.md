@@ -9,9 +9,9 @@
 
 # How to Update Content
 
-- Change the variables in `/src/lib/App.svelte` (all data about the fundraiser is on all on this page under `<script>`)
+- Change the variables in `/src/App.svelte` (all data about the fundraiser is on all on this page under `<script>`)
 - This is meant to pass on data from API and data storage all in one place.
-- Colors and other styles can be changed with global variables in `app.css`
+- Colors and other styles can be changed with global variables in `/src/app.css`
 - For example, the `--primary` and `--secondary` variables will change the colors of the entire page.
 
 # How to Build Website
