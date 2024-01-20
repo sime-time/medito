@@ -11,7 +11,7 @@
 - Colors and other styles can be changed with global variables in "app.css"
 - the --primary and --secondary variables will change the colors of the entire page for example.
 
-## How to Build Website
+# How to Build Website
 
 - clone the repository
 - in your terminal, cd into the medito-page folder
@@ -19,15 +19,13 @@
 - this will compile svelte into pure javascript and create a /dist folder with the distributable build code.
 - use the files in /dist to host on cloudflare.
 
-## Notes
+# Notes
 
 - The /docs folder is only for github pages
 - I did not have time to do any backend work and integrate with stripe
 - I am more than willing to continue working on this for the medito foundation for free.
 
 #############################################################
-
-# Project Brief Checklist: Flexible Fundraising Single Web Page
 
 ## Objective:
 
